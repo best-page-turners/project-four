@@ -132,19 +132,22 @@ const SearchBooks = () => {
             id="search"
             onChange={handleInputAuthor}
             value={userAuthorInput}
-            placeholder="Try 'Murder'"
+            placeholder="Books by authors"
+            aria-required="true" 
+            required
           />
-          <button>Search</button>
-          OR
-          <label htmlFor="search">Search by title: </label>
+          <button aria-label="Submit query for books by author">Search</button>
+          <label htmlFor="search">OR Search by title: </label>
           <input
             type="text"
             id="search"
             onChange={handleInputTitle}
             value={userTitleInput}
             placeholder="Try 'Murder'"
+            aria-required="true" 
+            required
           />
-          <button>Search</button>
+          <button aria-label="Submit query for books by title">Search</button>
         </form>
       </section>
 
@@ -156,8 +159,8 @@ const SearchBooks = () => {
             <button onClick={handleClickNext}> Next</button>
           ) : (
             <div>
-              <button onClick={handleClickBack}> Back</button>
-              <button onClick={handleClickNext}> Next</button>
+              <button onClick={handleClickBack} aria-label="Go to the previous page of books"> Back</button>
+              <button onClick={handleClickNext}  aria-label="Go to the next page of books"> Next</button>
             </div>
           )
         ) : null}
